@@ -1,0 +1,24 @@
+ const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get('id'));
+    const reports = JSON.parse(localStorage.getItem('reports')) || [];
+    const report = reports.find(r => r.id === id);
+
+
+    const container = document.getElementById('detail-container');
+    if (report) {
+      container.innerHTML = `
+         <div class="card shadow-sm">
+      ${report.image ? `<img src="${report.image}" class="card-img-top" alt="Foto Fasilitas">` : ''}
+      <div class="card-body">
+        <h2>${report.name}</h2>
+        <p><strong>Status:</strong> ${report.status}</p>
+        <p><strong>Tanggal:</strong> ${report.date}</p>
+        <p>${report.description}</p>
+        <a href="reports.html" class="btn btn-secondary">Kembali</a>
+        <a href="edit-report.html?id=${report.id}" class="btn btn-warning ms-2">Edit</a>
+      </div>
+    </div>
+      `;
+    } else {
+      container.innerHTML = '<p>Laporan tidak ditemukan.</p>';
+    }
