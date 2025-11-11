@@ -1,0 +1,32 @@
+ .service-card {
+    border: 2px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.25);
+    border-color: #0d6efd; 
+  }
+  
+ .card {
+    border: 2px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.25);
+    border-color: #0d6efd;
+  }
+section {
+  min-height: 50vh; /* Biar setiap section tinggi 1 layar penuh */
+  display: flex;
+  align-items: center; /* Tengah vertikal */
+  justify-content: center; /* Tengah horizontal (kalau mau) */
+  flex-direction: column;
+  scroll-margin-top: 70px; /* biar scroll ke section gak ketutup navbar */
+}
+
+
+
