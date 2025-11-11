@@ -8,7 +8,7 @@
     box-shadow: 0 8px 25px rgba(0, 123, 255, 0.25);
     border-color: #0d6efd; 
   }
-  
+
  .card {
     border: 2px solid transparent;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
@@ -19,6 +19,7 @@
     box-shadow: 0 8px 25px rgba(0, 123, 255, 0.25);
     border-color: #0d6efd;
   }
+
 section {
   min-height: 50vh; /* Biar setiap section tinggi 1 layar penuh */
   display: flex;
@@ -27,6 +28,30 @@ section {
   flex-direction: column;
   scroll-margin-top: 70px; /* biar scroll ke section gak ketutup navbar */
 }
+
+#faq {
+  min-height: 100vh;
+}
+
+.faq-card {
+  background-color: #fff;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.faq-card:hover {
+  transform: translateY(-10px);
+  border-color: #0d6efd;
+  box-shadow: 0 0 25px rgba(13, 110, 253, 0.35); /* efek nyala biru */
+}
+
+.faq-card h5 {
+  color: #0d6efd;
+}
+
+
 
 
 
