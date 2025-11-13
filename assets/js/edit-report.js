@@ -7,7 +7,7 @@
 
 
     if (!report) {
-      alert('Laporan tidak ditemukan!');
+      alert('Report not found!');
       window.location.href = 'reports.html';
     }
 
@@ -28,6 +28,6 @@
 
 
       localStorage.setItem('reports', JSON.stringify(reports));
-      alert('Perubahan berhasil disimpan!');
+      alert('Changes saved successfully!');
       window.location.href = 'report-detail.html?id=' + report.id;
     });

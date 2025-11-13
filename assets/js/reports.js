@@ -14,7 +14,7 @@ function loadReports() {
 function renderReports(reports) {
   container.innerHTML = '';
   if (reports.length === 0) {
-    container.innerHTML = '<p class="text-muted">Belum ada laporan.</p>';
+    container.innerHTML = '<p class="text-muted">There are no reports yet.</p>';
     return;
   }
 
@@ -26,12 +26,12 @@ function renderReports(reports) {
         <div class="card-body">
           <h5 class="card-title">${r.name}</h5>
           <p class="card-text text-truncate">${r.description}</p>
-          <span class="badge bg-${r.status === 'Selesai' ? 'success' : r.status === 'Diproses' ? 'warning' : 'secondary'}">
+          <span class="badge bg-${r.status === 'Finished' ? 'success' : r.status === 'Processed' ? 'warning' : 'secondary'}">
             ${r.status}
           </span>
           <div class="mt-3 d-flex justify-content-between">
             <a href="report-detail.html?id=${r.id}" class="btn btn-sm btn-primary">Detail</a>
-            <button class="btn btn-sm btn-danger" onclick="deleteReport(${r.id})">Hapus</button>
+            <button class="btn btn-sm btn-danger" onclick="deleteReport(${r.id})">Delete</button>
           </div>
         </div>
       </div>
@@ -51,7 +51,7 @@ function applyFilter() {
   );
 
   document.getElementById("filterStatusInfo").innerText =
-    `Filter diterapkan: ${filtered.length} laporan ditemukan`;
+    `: Filter applied to ${filtered.length} report found`;
 
   renderReports(filtered);
 }
@@ -64,12 +64,12 @@ clearBtn.addEventListener('click', () => {
 });
 
 function deleteReport(id) {
-  if (!confirm("Yakin ingin menghapus laporan ini?")) return;
+  if (!confirm("Are you sure you want to delete this report?")) return;
 
   reports = reports.filter(report => report.id !== id);
   localStorage.setItem('reports', JSON.stringify(reports));
 
-  alert("Laporan berhasil dihapus!");
+  alert("Report deleted successfully!");
   loadReports();
 }
 

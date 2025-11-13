@@ -8,17 +8,17 @@
     if (report) {
       container.innerHTML = `
          <div class="card shadow-sm">
-      ${report.image ? `<img src="${report.image}" class="card-img-top" alt="Foto Fasilitas">` : ''}
+      ${report.image ? `<img src="${report.image}" class="card-img-top" alt="Facility Photos">` : ''}
       <div class="card-body">
         <h2>${report.name}</h2>
         <p><strong>Status:</strong> ${report.status}</p>
         <p><strong>Tanggal:</strong> ${report.date}</p>
         <p>${report.description}</p>
-        <a href="reports.html" class="btn btn-secondary">Kembali</a>
+        <a href="reports.html" class="btn btn-secondary">Back</a>
         <a href="edit-report.html?id=${report.id}" class="btn btn-warning ms-2">Edit</a>
       </div>
     </div>
       `;
     } else {
-      container.innerHTML = '<p>Laporan tidak ditemukan.</p>';
+      container.innerHTML = '<p>Report not found.</p>';
     }

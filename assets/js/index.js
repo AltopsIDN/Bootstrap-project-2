@@ -3,15 +3,15 @@ function updateDashboard() {
 
 
     const total = reports.length;
-    const baru = reports.filter(r => r.status === "Baru").length;
-    const proses = reports.filter(r => r.status === "Diproses").length;
-    const selesai = reports.filter(r => r.status === "Selesai").length;
+    const New = reports.filter(r => r.status === "New").length;
+    const Processed = reports.filter(r => r.status === "Processed").length;
+    const Finished = reports.filter(r => r.status === "Finished").length;
 
 
     document.getElementById('totalReports').innerText = total;
-    document.getElementById('newReports').innerText = baru;
-    document.getElementById('processReports').innerText = proses;
-    document.getElementById('doneReports').innerText = selesai;
+    document.getElementById('newReports').innerText = New;
+    document.getElementById('processReports').innerText = Processed;
+    document.getElementById('doneReports').innerText = Finished;
   }
 
 
